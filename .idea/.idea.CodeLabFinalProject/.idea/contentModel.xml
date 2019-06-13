@@ -10,8 +10,8 @@
       <e p="Assets" t="Include">
         <e p="level0.txt" t="Include" />
         <e p="SavePosition.cs" t="Include" />
+        <e p="Score.cs" t="Include" />
         <e p="Scripts" t="Include">
-          <e p="level0.txt" t="Include" />
           <e p="Scripts" t="Include">
             <e p="BoardController.cs" t="Include" />
             <e p="CameraFollow.cs" t="Include" />
@@ -26,7 +26,6 @@
             <e p="PlayerMovement.cs" t="Include" />
             <e p="Prize.cs" t="Include" />
             <e p="Restarter.cs" t="Include" />
-            <e p="ScoreManager.cs" t="Include" />
             <e p="ThrusterScript.cs" t="Include" />
             <e p="TrackObject.cs" t="Include" />
           </e>

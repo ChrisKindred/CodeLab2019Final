@@ -20,40 +20,10 @@ public class LevelLoader : MonoBehaviour
     {
         LoadFromText();
         LoadFromText();
-        LoadFromText();
-        LoadFromText();
-        LoadFromText();
-        LoadFromText();
-        LoadFromText();
-        LoadFromText();
-        LoadFromText();       
-        LoadFromText();      
-        LoadFromText();      
-        LoadFromText();
-        LoadFromText();
-        LoadFromText();       
-        LoadFromText();
-        LoadFromText();        
-        LoadFromText();
-        LoadFromText();
-        LoadFromText();       
-        LoadFromText();       
-        LoadFromText();
-        LoadFromText();      
-        LoadFromText();        
-        LoadFromText();       
-        LoadFromText();
-        LoadFromText();
-        LoadFromText();      
-        LoadFromText();
-        LoadFromText();      
-        LoadFromText();
-        LoadFromText();
-        LoadFromText();        
-        LoadFromText();
 
 
-        
+
+
 
     }
 
@@ -92,13 +62,13 @@ public class LevelLoader : MonoBehaviour
             if (inputLine[i] == 'X')
             { 
                 obstacleObject = Instantiate<GameObject>(GameObject.FindGameObjectWithTag("Hazard"));
-                obstacleObject.transform.position = new Vector3(Random.Range(-15f, 18f), 1, (Random.Range(50f, 2000f))); //i * int
+                obstacleObject.transform.position = new Vector3(Random.Range(-15f, 18f), 1, (Random.Range(50f, 2200f))); //i * int
             }
 
             if (inputLine[i] == 'B')
             {
                 obstacleObject = Instantiate<GameObject>(Prize);
-                obstacleObject.transform.position = new Vector3(Random.Range(-15f, 18f), 1, (Random.Range(50f, 2000f)));
+                obstacleObject.transform.position = new Vector3(Random.Range(-15f, 18f), 1, (Random.Range(50f, 2100f)));
             }
         }
 

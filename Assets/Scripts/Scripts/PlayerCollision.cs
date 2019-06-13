@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerCollision : MonoBehaviour
 {
@@ -22,6 +23,9 @@ public class PlayerCollision : MonoBehaviour
         if (collisionInfo.collider.CompareTag("Hazard"))
         {
             Debug.Log("We hit a Hazard!");
+            
+            SceneManager.LoadScene("SampleScene");
+
             // FindObjectOfType<GameManager>().EndGame();
             // Detach camera from Hoverboard
             // Restart the game on collision
