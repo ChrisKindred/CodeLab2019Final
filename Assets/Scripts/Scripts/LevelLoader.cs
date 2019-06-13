@@ -19,10 +19,6 @@ public class LevelLoader : MonoBehaviour
     void Start()
     {
         LoadFromText();
-        LoadFromText();
-
-
-
 
 
     }

@@ -8,6 +8,8 @@ TagManager:
   - Hazard
   - Enemy
   - Prize
+  - Fire
+  - Track
   layers:
   - Default
   - TransparentFX
