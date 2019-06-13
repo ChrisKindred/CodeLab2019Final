@@ -511,6 +511,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b0bd870b8f44b914485952a099dd4e7c, type: 3}
+--- !u!1 &503285818 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6182890124245316993, guid: e631a01c1af0cef40919430a13a18ed8,
+    type: 3}
+  m_PrefabInstance: {fileID: 6182890124583779771}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &534669902
 GameObject:
   m_ObjectHideFlags: 0
@@ -1459,7 +1465,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   turnRotationAngle: 10
   turnRotationSeekSpeed: 0.15
-  acceleration: 4000
+  acceleration: 4500
   rotationRate: 75
 --- !u!114 &1057021277
 MonoBehaviour:
@@ -1564,7 +1570,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 1057021278}
   forwardForce: 50
-  sidewaysForce: 60
+  sidewaysForce: 100
   boostForce: 20
   brakeForce: 0
 --- !u!114 &1057021282
@@ -3517,8 +3523,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad54e4341bf1fdb4d8f70b253891b8c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Hazard: {fileID: 0}
-  Prize: {fileID: 0}
+  Hazard: {fileID: 503285818}
+  Prize: {fileID: 1026430268}
 --- !u!4 &2077634649
 Transform:
   m_ObjectHideFlags: 0
