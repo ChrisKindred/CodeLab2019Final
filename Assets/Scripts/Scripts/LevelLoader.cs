@@ -97,7 +97,7 @@ public class LevelLoader : MonoBehaviour
 
             if (inputLine[i] == 'B')
             {
-                obstacleObject = Instantiate<GameObject>(GameObject.FindGameObjectWithTag("Prize"));
+                obstacleObject = Instantiate<GameObject>(Prize);
                 obstacleObject.transform.position = new Vector3(Random.Range(-15f, 18f), 1, (Random.Range(50f, 2000f)));
             }
         }
