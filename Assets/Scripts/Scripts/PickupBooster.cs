@@ -7,7 +7,7 @@ public class PickupBooster : MonoBehaviour
 
     public Rigidbody rb;
    //public bool enter;
-    public float boostForce = 2000f;
+    public float boostForce = 20f;
     
     
     
@@ -22,6 +22,7 @@ public class PickupBooster : MonoBehaviour
         if (collider.gameObject.CompareTag("Player"))
         {
             Debug.Log("entered");
+            rb.AddForce(boostForce, boostForce, boostForce);
             Destroy(gameObject);
         }
     }
