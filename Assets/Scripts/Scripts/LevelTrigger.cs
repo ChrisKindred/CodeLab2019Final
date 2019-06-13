@@ -12,7 +12,7 @@ public class LevelTrigger : MonoBehaviour
     public void OnTriggerEnter()
     {
         
-        Instantiate(Prefab, spawnPoint.position * 30, spawnPoint.rotation);
+        Instantiate(Prefab, spawnPoint.position, spawnPoint.rotation);
 
 //        Debug.Log("Trigger entered!");
 //        if (entered == true)
