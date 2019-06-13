@@ -21,6 +21,7 @@
             <e p="level0.txt" t="Include" />
             <e p="LevelLoader.cs" t="Include" />
             <e p="LevelTrigger.cs" t="Include" />
+            <e p="PickupBooster.cs" t="Include" />
             <e p="PlayerCollision.cs" t="Include" />
             <e p="PlayerMovement.cs" t="Include" />
             <e p="Prize.cs" t="Include" />

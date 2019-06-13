@@ -4,13 +4,13 @@ using UnityEngine;
 using System.IO;
 
 //Usage: To make a maze game
-//Intent: Add a player movement script, goal action and trap action
+//Intent: Spawn hazards and boost prizes
 
 public class LevelLoader : MonoBehaviour
 {
 //    public GameObject obstacle1;
-    public GameObject hazard;
-    public GameObject prize;
+    public GameObject Hazard;
+    public GameObject Prize;
 
 
 
@@ -19,25 +19,39 @@ public class LevelLoader : MonoBehaviour
     void Start()
     {
         LoadFromText();
-
+        LoadFromText();
+        LoadFromText();
+        LoadFromText();
+        LoadFromText();
+        LoadFromText();
+        LoadFromText();
+        LoadFromText();
+        LoadFromText();       
+        LoadFromText();      
+        LoadFromText();      
+        LoadFromText();
+        LoadFromText();
+        LoadFromText();       
+        LoadFromText();
+        LoadFromText();        
+        LoadFromText();
+        LoadFromText();
+        LoadFromText();       
+        LoadFromText();       
+        LoadFromText();
+        LoadFromText();      
+        LoadFromText();        
+        LoadFromText();       
+        LoadFromText();
+        LoadFromText();
+        LoadFromText();      
+        LoadFromText();
+        LoadFromText();      
+        LoadFromText();
+        LoadFromText();
+        LoadFromText();        
         LoadFromText();
 
-        LoadFromText();
-        
-        LoadFromText();
-
-        LoadFromText();
-        
-
-        LoadFromText();
-        
-        LoadFromText();
-
-        LoadFromText();
-
-        LoadFromText();
-        
-        LoadFromText();
 
         
 
@@ -49,7 +63,10 @@ public class LevelLoader : MonoBehaviour
         string filePath = Application.dataPath + "/level0.txt"; // Declaring and initializing a string path.
         if (!File.Exists(filePath)) //is there a file with this name on your computer
         {
-            File .WriteAllText(filePath, "X"); // Creates a new file, writes the specified string to the file,
+            File.WriteAllText(filePath, "X");
+            File.WriteAllText(filePath, "B");
+            
+            // Creates a new file, writes the specified string to the file,
             // and then closes the file. If the target file already exists,
             // it is overwritten.
         }
@@ -74,14 +91,14 @@ public class LevelLoader : MonoBehaviour
 
             if (inputLine[i] == 'X')
             { 
-                obstacleObject = Instantiate<GameObject>(hazard);
-                obstacleObject.transform.position = new Vector3(Random.Range(-15f, 18f), 5, i * (Random.Range(-15f, 18f))); //i * int
+                obstacleObject = Instantiate<GameObject>(GameObject.FindGameObjectWithTag("Hazard"));
+                obstacleObject.transform.position = new Vector3(Random.Range(-15f, 18f), 1, (Random.Range(50f, 2000f))); //i * int
             }
 
             if (inputLine[i] == 'B')
             {
-                obstacleObject = Instantiate<GameObject>(prize);
-                obstacleObject.transform.position = new Vector3(Random.Range(-15f, 18f), 5, i * (Random.Range(-15f, 18f)));
+                obstacleObject = Instantiate<GameObject>(GameObject.FindGameObjectWithTag("Prize"));
+                obstacleObject.transform.position = new Vector3(Random.Range(-15f, 18f), 1, (Random.Range(50f, 2000f)));
             }
         }
 
