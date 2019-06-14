@@ -973,7 +973,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   turnRotationAngle: 10
   turnRotationSeekSpeed: 0.15
-  acceleration: 4500
+  acceleration: 7000
   rotationRate: 75
 --- !u!114 &1057021277
 MonoBehaviour:
@@ -1079,7 +1079,7 @@ MonoBehaviour:
   rb: {fileID: 1057021278}
   forwardForce: 50
   sidewaysForce: 120
-  boostForce: 20
+  boostForce: 60
   brakeForce: 0
 --- !u!114 &1057021282
 MonoBehaviour:
@@ -2398,6 +2398,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2679139441483878977, guid: 05f8efb46e6ba95479794a8bf9ce04b0,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 05f8efb46e6ba95479794a8bf9ce04b0, type: 3}
