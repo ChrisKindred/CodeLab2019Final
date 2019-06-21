@@ -9,21 +9,11 @@ public class PlayerCollision : MonoBehaviour
       
     private void OnCollisionEnter (Collision collisionInfo) 
     {
-        if (collisionInfo.collider.CompareTag("Prize"))
-        {
-            Debug.Log("We got a pickup!");
-            //Destroy the Prize gameObject on collision, then add +1 to the player's score
-            
-            //Debug.Log("+1")
-            
-            
-          //  FindObjectOfType<GameManager>().EndGame();
-        }
-
+       
         if (collisionInfo.collider.CompareTag("Hazard"))
         {
             Debug.Log("We hit a Hazard!");
-            
+            GameManager.Instance.GameOver();
             SceneManager.LoadScene("SampleScene");
 
             // FindObjectOfType<GameManager>().EndGame();
@@ -33,4 +23,27 @@ public class PlayerCollision : MonoBehaviour
             //  FindObjectOfType<>;
         }
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Prize"))
+        {
+            Debug.Log("We got a pickup!");
+            
+            
+            //Destroy the Prize gameObject on collision, then add +1 to the player's score
+            //Debug.Log("+1")
+            GameManager.Instance.Score += 1;
+            Destroy(other.gameObject);
+                
+                
+            
+        }
+
+    }
+
+   
+    
+        
+   
 }

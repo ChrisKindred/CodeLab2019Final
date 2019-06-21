@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Scripting;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -12,7 +13,10 @@ public Rigidbody rb;               // permission + type + name = function
 public float forwardForce = 2000f; //Makes forwardForce public in the inspector
 public float sidewaysForce = 500f; //The function sidewaysForce keeps us from having to hard code the force into the variable
 public float boostForce = 1000f;
-public float brakeForce = -2000f;
+
+public float boosterButton = 3000f;
+    
+//public float brakeForce = -2000f;
     
     // Update is called once per frame
     void FixedUpdate() //FixedUpdate can sync forces with Unity's physics engine
@@ -33,11 +37,20 @@ public float brakeForce = -2000f;
         {
             rb.AddForce(0, 0, boostForce);
         }
-
-        if (Input.GetKey("d"))
+        
+    if (Input.GetKey(KeyCode.Space))
         {
-            rb.AddForce(0, 0, brakeForce);
+            rb.AddForce(0, 0, boosterButton);
         }
+
+    if (Input.GetKeyUp(KeyCode.Space))
+        {
+            rb.AddForce(0, 0, -boosterButton);
+        }
+//    if (Input.GetKey("s"))
+//        {
+//            rb.AddForce(0, 0, breakForce);
+//        }
 
 
 //        if (rb.position.y < 300)
