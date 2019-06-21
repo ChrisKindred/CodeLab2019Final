@@ -79,7 +79,7 @@ public class LevelLoader : MonoBehaviour
                 Debug.Log("found C in file");
                 obstacleObject = Instantiate<GameObject>(GameObject.FindGameObjectWithTag("Hazard"));
                 obstacleObject.transform.position =
-                    new Vector3(Random.Range(-15f, 18f), 1, i * zDistanceInterval); //i * int
+                    new Vector3(Random.Range(-3f, 7f), 1, i * zDistanceInterval); //i * int
             }
 
             if (inputLine[i] == 'R')
@@ -87,14 +87,14 @@ public class LevelLoader : MonoBehaviour
                 Debug.Log("found R in file");
                 obstacleObject = Instantiate<GameObject>(GameObject.FindGameObjectWithTag("Hazard"));
                 obstacleObject.transform.position =
-                    new Vector3(Random.Range(-15f, 18f), 1, i * zDistanceInterval); //i * int
+                    new Vector3(Random.Range(7f, 18f), 1, i * zDistanceInterval); //i * int
             }
 
             if (inputLine[i] == 'P')
             {
                 Debug.Log("found P in file");
                 obstacleObject = Instantiate<GameObject>(Prize);
-                obstacleObject.transform.position = new Vector3(Random.Range(-15f, 18f), 1, i * zDistanceInterval);
+                obstacleObject.transform.position = new Vector3(Random.Range(-8f, 12f), 1, i * zDistanceInterval);
             }
         }
 
