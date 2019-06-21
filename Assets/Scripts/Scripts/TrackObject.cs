@@ -6,13 +6,9 @@ public class TrackObject : MonoBehaviour
 {
 
     public Transform target;
-
     public float distanceUp;
-
     public float distanceBack;
-
     public float minimumHeight;
-
     private Vector3 positionVelocity;
     
     

@@ -5,14 +5,18 @@ using UnityEngine.SceneManagement;
 
 public class PlayerCollision : MonoBehaviour
 {
+    
     public PlayerMovement movement;
-      
+    public float delay;
+    
     private void OnCollisionEnter (Collision collisionInfo) 
     {
        
         if (collisionInfo.collider.CompareTag("Hazard"))
         {
             Debug.Log("We hit a Hazard!");
+            Destroy(gameObject.GetComponent("TrackObject"));
+            //Invoke("LoadScene", delay);
             GameManager.Instance.GameOver();
             SceneManager.LoadScene("SampleScene");
 

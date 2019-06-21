@@ -9,6 +9,10 @@ using System.IO;
 public class LevelLoader : MonoBehaviour
 {
 //    public GameObject obstacle1;
+    
+    //Make this a singleton
+    public static LevelLoader me;
+    
     public GameObject LeftHazard;
     public GameObject CenterHazard;
     public GameObject RightHazard;
@@ -18,19 +22,29 @@ public class LevelLoader : MonoBehaviour
     public int xDistanceInterval;
     public int zDistanceInterval;
 
+    private string[] filePaths;
+    private int numLevels = 2; //change this if we add more levels
 
+    void Awake()
+    {
+        me = this; //this particular instance of LevelLoader will be the static 'me' variable
+    }
+    
     // Start is called before the first frame update
     void Start()
     {
-        LoadFromText();
-
+        filePaths = new string[numLevels];
+        for (int i = 0; i < numLevels; i++)
+        {
+            filePaths[i] = Application.dataPath + "/level" + i + ".txt";
+        }
+        Debug.Log(filePaths[0]);
+        LoadFromText(0,0);
 
     }
 
-    public void LoadFromText()
+    public void LoadFromText(int levelToLoad = 0, float startingZPosition=0)
     {
-
-        string filePath = Application.dataPath + "/level0.txt"; // Declaring and initializing a string path.
 
 
         /*
@@ -49,8 +63,8 @@ public class LevelLoader : MonoBehaviour
    */
 
         //The following string inputLine holds all text from the .txt file
-
-        string inputLine = File.ReadAllText(filePath);
+        Debug.Log("file path for level " + levelToLoad + " = " + filePaths[levelToLoad]);
+        string inputLine = File.ReadAllText(filePaths[levelToLoad]);
         Debug.Log("InputLine: " + inputLine);
 
         //This for loop is going through each character in the line of the .txt file
@@ -71,7 +85,7 @@ public class LevelLoader : MonoBehaviour
                 Debug.Log("found L in file");
                 obstacleObject = Instantiate<GameObject>(GameObject.FindGameObjectWithTag("Hazard"));
                 obstacleObject.transform.position =
-                    new Vector3(Random.Range(-14f, -4f), 1, i * zDistanceInterval); //i * int
+                    new Vector3(Random.Range(-14f, -4f), 1, i * zDistanceInterval+startingZPosition); //i * int
             }
 
             if (inputLine[i] == 'C')
@@ -79,7 +93,7 @@ public class LevelLoader : MonoBehaviour
                 Debug.Log("found C in file");
                 obstacleObject = Instantiate<GameObject>(GameObject.FindGameObjectWithTag("Hazard"));
                 obstacleObject.transform.position =
-                    new Vector3(Random.Range(-3f, 7f), 1, i * zDistanceInterval); //i * int
+                    new Vector3(Random.Range(-3f, 7f), 1, i * zDistanceInterval+startingZPosition); //i * int
             }
 
             if (inputLine[i] == 'R')
@@ -87,14 +101,14 @@ public class LevelLoader : MonoBehaviour
                 Debug.Log("found R in file");
                 obstacleObject = Instantiate<GameObject>(GameObject.FindGameObjectWithTag("Hazard"));
                 obstacleObject.transform.position =
-                    new Vector3(Random.Range(7f, 18f), 1, i * zDistanceInterval); //i * int
+                    new Vector3(Random.Range(7f, 18f), 1, i * zDistanceInterval+startingZPosition); //i * int
             }
 
             if (inputLine[i] == 'P')
             {
                 Debug.Log("found P in file");
                 obstacleObject = Instantiate<GameObject>(Prize);
-                obstacleObject.transform.position = new Vector3(Random.Range(-8f, 12f), 1, i * zDistanceInterval);
+                obstacleObject.transform.position = new Vector3(Random.Range(-8f, 12f), 1, i * zDistanceInterval+startingZPosition);
             }
         }
 
