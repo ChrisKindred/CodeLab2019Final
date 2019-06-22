@@ -80,16 +80,16 @@ public class LevelLoader : MonoBehaviour
             //This if statement instantiates a new GameObject and changes its position
             //The position vector changes based on index i
 
-            if (inputLine[i] == 'L')
-            {
-                Debug.Log("found L in file");
-                obstacleObject = Instantiate<GameObject>(GameObject.FindGameObjectWithTag("Hazard"));
+            if (inputLine[i] == 'L') //Found an 'L' in this position of the file
+            {    //then
+                Debug.Log("found L in file"); //Prints a Debug message saying that we found an 'L' 
+                obstacleObject = Instantiate<GameObject>(GameObject.FindGameObjectWithTag("Hazard")); //
                 obstacleObject.transform.position =
                     new Vector3(Random.Range(-14f, -4f), 1, i * zDistanceInterval+startingZPosition); //i * int
-            }
+            }    //end
 
-            if (inputLine[i] == 'C')
-            {
+            if (inputLine[i] == 'C') //Found a 'C' in this position of the file
+            {    
                 Debug.Log("found C in file");
                 obstacleObject = Instantiate<GameObject>(GameObject.FindGameObjectWithTag("Hazard"));
                 obstacleObject.transform.position =

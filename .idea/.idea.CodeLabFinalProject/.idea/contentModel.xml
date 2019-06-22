@@ -10,6 +10,7 @@
       <e p="Assets" t="Include">
         <e p="level0.txt" t="Include" />
         <e p="level1.txt" t="Include" />
+        <e p="Rotator.cs" t="Include" />
         <e p="SavePosition.cs" t="Include" />
         <e p="Score.cs" t="Include" />
         <e p="Scripts" t="Include">
